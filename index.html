@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBCE Link</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Redirecting Please Wait</h1>
+    <p>You are being redirected to <span id="link">google.com</span></p>
+</body>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #0050da;
+        color: aliceblue;
+        font-family: 'Rubik', sans-serif;
+        flex-direction: column;
+    }
+    h1{
+        text-align: center;
+        font-size: 3em;
+    }
+    P{
+        margin-top: 6px;
+    }
+</style>
+<script>
+    Redirect()
+
+    function Redirect(){
+        var urlParams = new URLSearchParams(window.location.search);
+var searchQuery = urlParams.get('Link');
+
+// Check if the searchQuery parameter exists and is not empty
+if (searchQuery) {
+  // Construct the target URL based on the searchQuery parameter
+  var targetUrl =  searchQuery;
+
+  // Use window.location.href to perform the redirect
+  window.location.href = targetUrl;
+} else {
+  // If the searchQuery parameter is not found or is empty, you can handle it here
+  alert('No search query provided.');
+}
+    }
+</script>
+</html>
