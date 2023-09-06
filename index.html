@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DBCE Link</title>
+    <link rel="shortcut icon" href="Icon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Code By Rhys Josmin Rodrigues -->
     <h1>Redirecting Please Wait</h1>
-    <p>You are being redirected to <span id="link">google.com</span></p>
+    <p>You are being redirected to <span id="link"></span></p>
 </body>
 <style>
     *{
@@ -42,7 +44,7 @@
     }
     function Redirect(){
         var urlParams = new URLSearchParams(window.location.search);
-        var searchQuery = urlParams.get('Link');
+        var searchQuery = urlParams.get('link');
         if (searchQuery) {
             var targetUrl =  searchQuery;
             window.location.href = targetUrl;
@@ -50,8 +52,14 @@
             var searchQuery = urlParams.get('website');
             if (searchQuery) {
                 window.location.href=Websites[searchQuery]
-
             }
+        }
+        if(searchQuery){
+            document.getElementById('link').innerText=searchQuery
+            
+        }else{
+            document.getElementById('link').innerText='None'
+
         }
     }
     Redirect()
