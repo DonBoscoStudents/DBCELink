@@ -37,23 +37,20 @@
     }
 </style>
 <script>
-    Redirect()
-
+    const Websites={
+        "Inspirus":"https://inspirus22.netlify.app/subpages/masterclass"
+    }
     function Redirect(){
         var urlParams = new URLSearchParams(window.location.search);
-var searchQuery = urlParams.get('Link');
-
-// Check if the searchQuery parameter exists and is not empty
-if (searchQuery) {
-  // Construct the target URL based on the searchQuery parameter
-  var targetUrl =  searchQuery;
-
-  // Use window.location.href to perform the redirect
-  window.location.href = targetUrl;
-} else {
-  // If the searchQuery parameter is not found or is empty, you can handle it here
-  alert('No search query provided.');
-}
+        var searchQuery = urlParams.get('Link');
+        if (searchQuery) {
+            var targetUrl =  searchQuery;
+            window.location.href = targetUrl;
+        }else{
+            var searchQuery = urlParams.get('website');
+            window.location.href=Websites[searchQuery]
+        }
     }
+    Redirect()
 </script>
 </html>
