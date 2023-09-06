@@ -48,7 +48,10 @@
             window.location.href = targetUrl;
         }else{
             var searchQuery = urlParams.get('website');
-            window.location.href=Websites[searchQuery]
+            if (searchQuery) {
+                window.location.href=Websites[searchQuery]
+
+            }
         }
     }
     Redirect()
